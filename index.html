@@ -6,6 +6,7 @@
   <meta name="robots" content="index,follow" />
   <meta name="generator" content="GrapesJS Studio" />
   <meta name="description" content="CPR d'Italia: istituzioni totali. Report TAI 2026" />
+  <meta name="site-version" content="20260309-4" />
   <title>CPR d'Italia: istituzioni totali. Report TAI 2026</title>
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 
@@ -292,11 +293,23 @@
       gap: 1rem;
     }
 
-    .section-grid {
+    .top-sections {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       width: 100%;
+    }
+
+    .single-section-stack {
+      display: grid;
+      grid-template-columns: 1fr !important;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .single-section-stack > .section-card {
+      width: 100%;
+      max-width: 100%;
     }
 
     .section-card {
@@ -321,10 +334,6 @@
       border-radius: inherit;
       pointer-events: none;
       background: radial-gradient(360px 120px at 100% 0%, rgba(189, 119, 129, 0.10), transparent 60%);
-    }
-
-    .section-card.full-width {
-      grid-column: 1 / -1;
     }
 
     .section-header {
@@ -1036,7 +1045,7 @@
     }
 
     @media (max-width: 940px) {
-      .section-grid {
+      .top-sections {
         grid-template-columns: 1fr;
       }
       .brand-text {
@@ -1115,9 +1124,10 @@
         <a href="#infografiche">Infografica</a>
         <a href="#qa-con-il-chatbot">Q&amp;A</a>
         <a
+          id="english-link"
           class="lang-switch notranslate"
           translate="no"
-          href="https://translate.google.com/translate?sl=it&tl=en&u=https%3A%2F%2Fematarti.github.io%2FReport_CPR_2026%2F"
+          href="#"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >English</a>
@@ -1160,9 +1170,7 @@
 
   <main class="shell">
     <div class="stack-sections">
-
-      <!-- Sezioni 1 e 2 affiancate -->
-      <div class="section-grid">
+      <div class="top-sections">
         <section id="il-report" aria-labelledby="title-il-report" class="section-card">
           <div class="section-header">
             <div aria-hidden="true" class="section-index">01</div>
@@ -1220,157 +1228,157 @@
         </section>
       </div>
 
-      <!-- Sezione 3 a tutta larghezza -->
-      <section id="infografiche" aria-labelledby="title-infografiche" class="section-card full-width">
-        <div class="section-header">
-          <div aria-hidden="true" class="section-index">03</div>
-          <div class="status">Visual abstract</div>
-        </div>
+      <div class="single-section-stack">
+        <section id="infografiche" aria-labelledby="title-infografiche" class="section-card">
+          <div class="section-header">
+            <div aria-hidden="true" class="section-index">03</div>
+            <div class="status">Visual abstract</div>
+          </div>
 
-        <div>
-          <h2 id="title-infografiche" class="section-title">
-            Infografica: l’(in)utilità dei <span class="notranslate" translate="no">CPR</span> | capienza massima vs effettiva
-          </h2>
-        </div>
+          <div>
+            <h2 id="title-infografiche" class="section-title">
+              Infografica: l’(in)utilità dei <span class="notranslate" translate="no">CPR</span> | capienza massima vs effettiva
+            </h2>
+          </div>
 
-        <div class="embed">
-          <div class="info-poster">
-            <header class="info-header">
-              <div>
-                <div class="eyebrow">
-                  <span class="dot"></span> Visual abstract | <span class="notranslate" translate="no">CPR</span> in Italia
-                </div>
-
-                <h1>Capienza massima vs capienza effettiva nei 10 <span class="notranslate" translate="no">CPR</span> in Italia</h1>
-
-                <p class="subtitle">
-                  Il confronto mostra che la disponibilità effettiva dei posti è spesso molto inferiore alla capienza teorica.
-                  Nei due <span class="notranslate" translate="no">CPR</span> con dato non fornito, il confronto resta incompleto.
-                </p>
-
-                <div class="badges">
-                  <span class="badge">10 <span class="notranslate" translate="no">CPR</span> considerati</span>
-                  <span class="badge">2 <span class="notranslate" translate="no">CPR</span> con dato effettivo non disponibile</span>
-                  <span class="badge">Confronto diretto tra capienza teorica e reale</span>
-                </div>
-              </div>
-
-              <aside class="headline-note">
-                <div class="label">Messaggio chiave</div>
-                <div class="big">546 posti effettivi noti</div>
-                <p>
-                  Su <strong>1.074</strong> posti teorici riferiti agli 8 <span class="notranslate" translate="no">CPR</span> con dato disponibile,
-                  la capienza effettiva nota corrisponde a <strong>50,8%</strong>. La lettura dei totali effettivi esclude quindi
-                  <strong>Macomer</strong> e <strong>Trapani</strong>, per i quali il dato non è fornito.
-                </p>
-              </aside>
-            </header>
-
-            <section class="info-stats">
-              <div class="info-stat">
-                <div class="label">Capienza massima totale</div>
-                <div id="totalMax" class="value">1.238</div>
-                <div class="sub">Somma della capienza teorica dichiarata per tutti i 10 <span class="notranslate" translate="no">CPR</span>.</div>
-              </div>
-              <div class="info-stat">
-                <div class="label">Capienza effettiva nota</div>
-                <div id="totalEff" class="value">546</div>
-                <div class="sub">Somma dei posti effettivi solo dove il dato è disponibile.</div>
-              </div>
-              <div class="info-stat">
-                <div class="label">Utilizzo medio sui dati noti</div>
-                <div id="knownPct" class="value">50,8%</div>
-                <div class="sub">Rapporto tra capienza effettiva nota e capienza teorica degli 8 <span class="notranslate" translate="no">CPR</span> con dato disponibile.</div>
-              </div>
-              <div class="info-stat">
-                <div class="label">Scarto complessivo noto</div>
-                <div id="knownGap" class="value">−528</div>
-                <div class="sub">Differenza tra capienza teorica ed effettiva considerando solo i <span class="notranslate" translate="no">CPR</span> con dato disponibile.</div>
-              </div>
-            </section>
-
-            <section class="info-main">
-              <article class="info-card">
-                <div class="info-head">
-                  <div>
-                    <h2>Confronto per singolo <span class="notranslate" translate="no">CPR</span></h2>
-                    <p>
-                      Ogni barra mostra la capienza massima teorica e, in sovrapposizione, la capienza effettiva.
-                      Per <strong>Macomer</strong> e <strong>Trapani</strong> la quota effettiva è indicata come non disponibile.
-                    </p>
+          <div class="embed">
+            <div class="info-poster">
+              <header class="info-header">
+                <div>
+                  <div class="eyebrow">
+                    <span class="dot"></span> Visual abstract | <span class="notranslate" translate="no">CPR</span> in Italia
                   </div>
 
-                  <div aria-hidden="true" class="legend">
-                    <div class="item"><span class="swatch max"></span> Capienza massima</div>
-                    <div class="item"><span class="swatch eff"></span> Capienza effettiva</div>
-                    <div class="item"><span class="swatch na"></span> Dato non fornito</div>
-                  </div>
-                </div>
+                  <h1>Capienza massima vs capienza effettiva nei 10 <span class="notranslate" translate="no">CPR</span> in Italia</h1>
 
-                <div id="rows" class="rows"></div>
-              </article>
-
-              <aside class="info-side">
-                <section class="info-card hero-card-mini">
-                  <span class="mini">In sintesi</span>
-                  <h2 class="callout">Poco più di 1 posto su 2 risulta effettivamente disponibile nei <span class="notranslate" translate="no">CPR</span> con dato noto.</h2>
-                  <p>
-                    Il disallineamento è particolarmente marcato nei centri più grandi. Il caso più estremo è <strong>Roma</strong>,
-                    con <strong>58</strong> posti effettivi a fronte di <strong>210</strong> teorici.
+                  <p class="subtitle">
+                    Il confronto mostra che la disponibilità effettiva dei posti è spesso molto inferiore alla capienza teorica.
+                    Nei due <span class="notranslate" translate="no">CPR</span> con dato non fornito, il confronto resta incompleto.
                   </p>
 
-                  <div class="mini-stats">
-                    <div class="mini-box">
-                      <div class="k"><span class="notranslate" translate="no">CPR</span> ≥ 80%</div>
-                      <div id="highCenters" class="v">2</div>
-                      <div class="t">Brindisi e Caltanissetta superano l’80% di utilizzo.</div>
+                  <div class="badges">
+                    <span class="badge">10 <span class="notranslate" translate="no">CPR</span> considerati</span>
+                    <span class="badge">2 <span class="notranslate" translate="no">CPR</span> con dato effettivo non disponibile</span>
+                    <span class="badge">Confronto diretto tra capienza teorica e reale</span>
+                  </div>
+                </div>
+
+                <aside class="headline-note">
+                  <div class="label">Messaggio chiave</div>
+                  <div class="big">546 posti effettivi noti</div>
+                  <p>
+                    Su <strong>1.074</strong> posti teorici riferiti agli 8 <span class="notranslate" translate="no">CPR</span> con dato disponibile,
+                    la capienza effettiva nota corrisponde a <strong>50,8%</strong>. La lettura dei totali effettivi esclude quindi
+                    <strong>Macomer</strong> e <strong>Trapani</strong>, per i quali il dato non è fornito.
+                  </p>
+                </aside>
+              </header>
+
+              <section class="info-stats">
+                <div class="info-stat">
+                  <div class="label">Capienza massima totale</div>
+                  <div id="totalMax" class="value">1.238</div>
+                  <div class="sub">Somma della capienza teorica dichiarata per tutti i 10 <span class="notranslate" translate="no">CPR</span>.</div>
+                </div>
+                <div class="info-stat">
+                  <div class="label">Capienza effettiva nota</div>
+                  <div id="totalEff" class="value">546</div>
+                  <div class="sub">Somma dei posti effettivi solo dove il dato è disponibile.</div>
+                </div>
+                <div class="info-stat">
+                  <div class="label">Utilizzo medio sui dati noti</div>
+                  <div id="knownPct" class="value">50,8%</div>
+                  <div class="sub">Rapporto tra capienza effettiva nota e capienza teorica degli 8 <span class="notranslate" translate="no">CPR</span> con dato disponibile.</div>
+                </div>
+                <div class="info-stat">
+                  <div class="label">Scarto complessivo noto</div>
+                  <div id="knownGap" class="value">−528</div>
+                  <div class="sub">Differenza tra capienza teorica ed effettiva considerando solo i <span class="notranslate" translate="no">CPR</span> con dato disponibile.</div>
+                </div>
+              </section>
+
+              <section class="info-main">
+                <article class="info-card">
+                  <div class="info-head">
+                    <div>
+                      <h2>Confronto per singolo <span class="notranslate" translate="no">CPR</span></h2>
+                      <p>
+                        Ogni barra mostra la capienza massima teorica e, in sovrapposizione, la capienza effettiva.
+                        Per <strong>Macomer</strong> e <strong>Trapani</strong> la quota effettiva è indicata come non disponibile.
+                      </p>
                     </div>
 
-                    <div class="mini-box">
-                      <div class="k"><span class="notranslate" translate="no">CPR</span> &lt; 50%</div>
-                      <div id="lowCenters" class="v">4</div>
-                      <div class="t">Gradisca d’Isonzo, Milano, Roma e Torino restano sotto metà capienza.</div>
+                    <div aria-hidden="true" class="legend">
+                      <div class="item"><span class="swatch max"></span> Capienza massima</div>
+                      <div class="item"><span class="swatch eff"></span> Capienza effettiva</div>
+                      <div class="item"><span class="swatch na"></span> Dato non fornito</div>
                     </div>
                   </div>
-                </section>
 
-                <section class="info-card insight-card">
-                  <h3>Scostamenti più ampi</h3>
-                  <div id="gapList" class="insight-list"></div>
-                </section>
+                  <div id="rows" class="rows"></div>
+                </article>
 
-                <section class="info-card rank-card">
-                  <h3>Utilizzo più alto e più basso</h3>
-                  <div id="rankGrid" class="rank-grid"></div>
-                </section>
-              </aside>
-            </section>
+                <aside class="info-side">
+                  <section class="info-card hero-card-mini">
+                    <span class="mini">In sintesi</span>
+                    <h2 class="callout">Poco più di 1 posto su 2 risulta effettivamente disponibile nei <span class="notranslate" translate="no">CPR</span> con dato noto.</h2>
+                    <p>
+                      Il disallineamento è particolarmente marcato nei centri più grandi. Il caso più estremo è <strong>Roma</strong>,
+                      con <strong>58</strong> posti effettivi a fronte di <strong>210</strong> teorici.
+                    </p>
 
-            <footer class="info-footer">
-              <div class="foot-left">
-                <strong>Nota di lettura:</strong> “Dato non fornito” significa che il valore di capienza effettiva non è disponibile
-                nella tabella di partenza. Percentuali, scarti complessivi e confronti sintetici sulla capienza effettiva sono quindi
-                calcolati solo sui <span class="notranslate" translate="no">CPR</span> per cui il dato è riportato.
-              </div>
-            </footer>
+                    <div class="mini-stats">
+                      <div class="mini-box">
+                        <div class="k"><span class="notranslate" translate="no">CPR</span> ≥ 80%</div>
+                        <div id="highCenters" class="v">2</div>
+                        <div class="t">Brindisi e Caltanissetta superano l’80% di utilizzo.</div>
+                      </div>
+
+                      <div class="mini-box">
+                        <div class="k"><span class="notranslate" translate="no">CPR</span> &lt; 50%</div>
+                        <div id="lowCenters" class="v">4</div>
+                        <div class="t">Gradisca d’Isonzo, Milano, Roma e Torino restano sotto metà capienza.</div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="info-card insight-card">
+                    <h3>Scostamenti più ampi</h3>
+                    <div id="gapList" class="insight-list"></div>
+                  </section>
+
+                  <section class="info-card rank-card">
+                    <h3>Utilizzo più alto e più basso</h3>
+                    <div id="rankGrid" class="rank-grid"></div>
+                  </section>
+                </aside>
+              </section>
+
+              <footer class="info-footer">
+                <div class="foot-left">
+                  <strong>Nota di lettura:</strong> “Dato non fornito” significa che il valore di capienza effettiva non è disponibile
+                  nella tabella di partenza. Percentuali, scarti complessivi e confronti sintetici sulla capienza effettiva sono quindi
+                  calcolati solo sui <span class="notranslate" translate="no">CPR</span> per cui il dato è riportato.
+                </div>
+              </footer>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Sezione 4 a tutta larghezza -->
-      <section id="qa-con-il-chatbot" aria-labelledby="title-qa" class="section-card full-width">
-        <div class="section-header">
-          <div aria-hidden="true" class="section-index">04</div>
-          <div class="status">Chatbot</div>
-        </div>
+        <section id="qa-con-il-chatbot" aria-labelledby="title-qa" class="section-card">
+          <div class="section-header">
+            <div aria-hidden="true" class="section-index">04</div>
+            <div class="status">Chatbot</div>
+          </div>
 
-        <div>
-          <h2 id="title-qa" class="section-title">Hai una domanda sul report? Il chatbot risponde!</h2>
-        </div>
+          <div>
+            <h2 id="title-qa" class="section-title">Hai una domanda sul report? Il chatbot risponde!</h2>
+          </div>
 
-        <div id="bp-embedded-webchat"></div>
-        <script src="https://files.bpcontent.cloud/2026/02/11/15/20260211154922-QE1NF98Z.js" defer></script>
-      </section>
+          <div id="bp-embedded-webchat"></div>
+          <script src="https://files.bpcontent.cloud/2026/02/11/15/20260211154922-QE1NF98Z.js" defer></script>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -1608,7 +1616,23 @@
         });
       }
 
-      if (document.body) wrapProtectedTerms(document.body);
+      function setEnglishLink() {
+        const link = document.getElementById("english-link");
+        const version = document.querySelector('meta[name="site-version"]')?.content || "1";
+        if (!link) return;
+
+        const sourceUrl = new URL(window.location.origin + window.location.pathname);
+        sourceUrl.searchParams.set("v", version);
+
+        link.href =
+          "https://translate.google.com/translate?sl=it&tl=en&u=" +
+          encodeURIComponent(sourceUrl.toString());
+      }
+
+      if (document.body) {
+        wrapProtectedTerms(document.body);
+        setEnglishLink();
+      }
     })();
   </script>
 </body>
